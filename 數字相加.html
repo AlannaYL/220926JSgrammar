@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let numa = parseInt(prompt('請輸入第一個數字'))
+        let numb = parseInt(prompt('請輸入第二個數字'))
+        let nump = numa + numb
+        // isNaN 函數判斷不是數字
+        // NaN = Not a nan
+        if (isNaN(nump)) alert('錯誤訊息')
+        else document.write(nump)
+
+        /*正則表達方式
+        let inpu1 = prompt()
+        let input2 = prompt()
+        ^開頭 \d 數字 + 一次以上 $ 結尾
+        let regex = / ^\d+$/g
+        or
+        \D 非數字
+        let regex = /\D/g
+
+        if (input 1 = \D || input 2 =\D){
+            console.log('輸入錯誤')
+        }else {
+            const result = parseInt(input1) + parseInt(input2)
+            document.write(result)
+        }
+        */
+    </script>
+</body>
+
+</html>

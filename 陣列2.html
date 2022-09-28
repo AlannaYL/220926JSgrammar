@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 陣列找東西
+        // 在陣列裡面找東西，回傳boolean,常用
+        const numbers = [100, 200, 300, 400, 500]
+        const hasMoreThan300 = numbers.some(number => {
+            return number > 300
+        })
+        console.log(hasMoreThan300)
+
+        // every陣列裡面的全部都跑
+        const allMoreThan300 = numbers.every(number => {
+            return number > 300
+        })
+        console.log(allMoreThan300)
+
+        // 回傳大於300第一個值,常用
+        const find300 = numbers.find(number => {
+            return number > 300
+        })
+        console.log(find300)
+
+        // 回傳第幾個,常用
+        const findIndex300 = numbers.findIndex(number => {
+            return number > 300
+        })
+        console.log(findIndex300)
+
+        // 最後一個大於300
+        const findLast300 = numbers.findLast(number => {
+            return number > 300
+        })
+        console.log(findLast300)
+
+        const findLastIndex300 = numbers.findLastIndex(number => {
+            return number > 300
+        })
+        console.log(findLastIndex300)
+
+        // 把所有符合的東西做成陣列回傳，很常用
+        const filter300 = numbers.filter(number => {
+            return number > 300
+        })
+        console.log(filter300)
+
+        // map把陣列重組，格式轉換
+        const map300 = numbers.map(number => {
+            return number * 2
+        })
+        console.log(map300)
+
+        const data = [
+            { name: 'John', age: 18 },
+            { name: 'Mary', age: 20 },
+            { name: 'Bob', age: 19 }]
+        const mapName = data.map(item => {
+            item.age *= 2
+            item.job = 'Student'
+            return item
+        })
+        console.table(mapName)
+        //陣列累加， ,可以不放，預設會是0，可以算一些購物車總金額
+        const reduce300 = numbers.reduce((total, number) => {
+            console.log(total, number)
+            return total + number
+        })
+        console.log(reduce300)
+
+        const numbers2 = [100, 500, 400, 200, 300, 800, 700, 100]
+        numbers2.sort((a, b) => {
+            console.log(a, b)
+            /* a - b > 0，a 排在 b 後面
+               a - b < 0，a 排在 b 前面
+               a - b = 0，a b位置不變
+            */
+            return a - b
+        })
+        console.log(numbers2)
+        numbers2.sort((a, b) => {
+            console.log(a, b)
+            return b - a
+        })
+        console.log(numbers2)
+
+        const texts = ['123', 'ABC', 'abc', 'CDE', 'ssdf', '789', '456']
+        texts.sort((a, b) => {
+            // localeCompare 比較字元編碼順序
+            // a 在 b 前是-1
+            // a 在 b 後是1
+            // a 在 b 相同是0
+            // 如果要倒序 * -1
+            return a.localeCompare(b)
+        })
+        console.log(texts)
+        // 中文語系排序預設是筆劃，很難排
+        let texts2 = ['一', '四', '二', '五', '三', '七', '六', '八', '十', '九']
+        texts2.sort((a, b) => {
+            return a.localeCompare(b, 'zh-TW')
+        })
+        console.log(texts2)
+    </script>
+</body>
+
+</html>

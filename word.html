@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let text1 = '   ahgshgl ahg      a gkJHKH      SLkjhfkadjHKHLhkhfkuh   '
+        text1 = text1.trim() //去除文字前後空白
+        console.log(text1)
+        text1 = text1.toUpperCase() //文字轉大寫
+        console.log(text1)
+        text1 = text1.toLowerCase() //文字轉小寫
+        console.log(text1)
+        //可以合併一起寫，但通常沒有這樣一起寫轉來轉去
+        text1 = text1.trim().toUpperCase().toLowerCase
+
+
+        let text2 = '外賣，咖哩蓋飯，咖哩棒棒'
+        let hasCurry = text2.includes('咖哩')//文字包含指定的訊息
+        if (hasCurry) console.log('有咖哩')
+        else console.log('沒咖哩')
+
+        //.match(Regex) 尋找不確定的字體
+        //有找到會回傳陣列沒找到會回傳null
+        let matchCurry = text2.match(/咖哩/g)
+        console.log(matchCurry)
+
+        let matchAllCurry = text2.matchAll(/咖哩/g)
+        console.log(matchAllCurry)
+        for (const match of matchAllCurry) {
+            console.log(match)
+        }
+
+        let indexCurry = text2.indexOf('咖哩') //搜尋第幾個出現的
+        console.log(indexCurry)
+
+        let xmas = 'Today is Xmas, Happy Xmas'
+        let xmasReplace = xmas.replace('Xmas', 'Christmas')//預設只能取代第一個，要取代多個要寫正則表達式
+        console.log(xmasReplace)
+        //全部更改使用正則表達式，使用g
+        let xmasReplaceRegex = xmas.replace(/Xmas/g, 'Chrismas')
+        console.log(xmasReplaceRegex)
+
+        //aaa@bbb.com
+        //fjgsgsp132@gjlsd.com
+        //gsjlgjs123
+        //([a-zA-Z1-9]+)@([a-zA-z1-9]+)\.com小括號是分組
+
+
+        let email = 'My email is fhskh13dfk@l12hgsl.com'
+        let emailreplace = email.replace(/([a-zA-Z1-9]+)@([a-zA-z1-9]+)\.com/g, `我的信箱是 $1@$2.com`)
+        //正則表達的另外一種方式$提及前面的()
+        console.log(emailreplace)
+
+
+        // 切割
+        let text3 = 'abcdefg'
+        let text3substr = text3.substr(2, 5)
+        //substr(開始，長度)
+        console.log(text3substr)
+        let text3substring = text3.substring(2, 5)
+        //substring(開始，結束)
+        console.log(text3substring)
+        let text3slice = text3.slice(-6, -2)
+        // slice(開始，結束)
+        //不包含結束
+        console.log(text3slice)
+
+        let text3int = parseInt(text3)
+        console.log(text3int)
+        console.log(text3int === NaN)//false
+        console.log(isNaN(text3int))//檢查一個文字有無數字以外的字元
+
+
+        //文字轉陣列
+        let filename = 'aaa.bbb.jpg'
+        // let filenameext = filename.slice(-3) 只能固定尋找3個字
+        let filenameext = filename.split('.').at(-1) //.at 功用跟[]一樣，可以給負數是倒數
+        //.pop把陣列的最後一個東西移除回傳
+        console.log(filenameext)
+    </script>
+</body>
+
+</html>
