@@ -10,9 +10,21 @@
 
 <body>
     <script>
-        for (let i = 0; i < text.length; i++) {
-            if (text[i] = )
+        // onput 存放判斷後的值
+        let input = prompt('請輸入英文')
+        let output = ''
+
+        //for迴圈判斷input每個字 
+        for (let i = 0; i < input.length; i++) {
+            // input i 小寫時，將值轉大放入output
+            // 反之input i 大寫時，將值轉小放入output
+            if (input[i] === input[i].toLowerCase()) {
+                output += input[i].toUpperCase()
+            } else {
+                output += input[i].toLowerCase()
+            }
         }
+        document.write(output)
     </script>
 </body>
 
